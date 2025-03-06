@@ -12,10 +12,9 @@ SNOWFLAKE_CONN_ID = "snowflake_conn"
 # Alpha Vantage API Key (Stored in Airflow Variables)
 API_KEY = Variable.get("alpha_vantage_api_key")
 
-# Stock Symbol (Now Required - No Default Value)
-STOCK_SYMBOL = Variable.get("stock_symbol")  # No default value, must be set in Airflow UI
+# Stock Symbol (Stored in Airflow UI)
+STOCK_SYMBOL = Variable.get("stock_symbol") 
 
-# Ensure STOCK_SYMBOL is not empty
 if not STOCK_SYMBOL:
     raise ValueError("Stock symbol is not set. Please add 'stock_symbol' in Airflow Variables.")
 
